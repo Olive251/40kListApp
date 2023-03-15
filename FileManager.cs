@@ -10,16 +10,10 @@ namespace _40kListApp
 {
     public class FileManager
     {
-        string fPath_;
+        public FileManager() { }
 
-        public FileManager(string fpath)
+        public void saveArmy(Army army, StreamWriter sw)
         {
-            fPath_ = fpath;
-        }
-
-        public void saveArmy(Army army, string fpath)
-        {
-            StreamWriter sw = new StreamWriter(fpath);
             List<string> record = army.writeArmyRecord();
 
             foreach (string line in record)
@@ -29,9 +23,10 @@ namespace _40kListApp
             sw.Close();
         }
 
-        public Army loadArmy()
+        public Army loadArmy(string fpath)
         {
-            Army army= new Army();
+            string[] armyRecord = System.IO.File.ReadAllLines(fpath);
+            Army army = new Army(armyRecord);
 
             return army;
         }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,8 @@ namespace _40kListApp
     public partial class Form_ArmyHome : Form
     {
         internal Army army_;
-        internal Helper helper = new Helper();
+        static FileManager fileManager = new FileManager();
+        static Helper helper = new Helper();
 
         public Form_ArmyHome()
         {
@@ -24,6 +26,7 @@ namespace _40kListApp
         public Form_ArmyHome(Army army)
         {
             army_ = army;
+            this.Text = army_.name();
             InitializeComponent();
             loadScreen();
         }
@@ -32,6 +35,11 @@ namespace _40kListApp
         {
             lbl_armyName.Text = army_.name();
             lbl_armyFaction.Text = army_.faction();
+            num_battleTally.Value = army_.battleTally();
+            num_winTally.Value = army_.winTally();
+            num_RP.Value = army_.reqPoints();
+            num_supplyLimit.Value = army_.supplyLimit();
+            lbl_supplyUsed.Text = army_.supplyUsed().ToString();
 
             foreach (Unit unit in army_.units())
             {
@@ -42,6 +50,7 @@ namespace _40kListApp
         private void button1_Click(object sender, EventArgs e)
         {
             Form_NewUnit nu = new Form_NewUnit(this);
+            nu.Text = "New Unit | " + army_.name();
             nu.ShowDialog();
         }
 
@@ -78,11 +87,11 @@ namespace _40kListApp
             }
             lbl_unitEquipment.Visible = true;
 
-            //lbl_unitPsyPowers = u.psyPowers();
+            lbl_unitPsyPowers.Text = u.psyPowers();
             lbl_unitPsyPowers.Visible = true;
-            //lbl_unitWarlordTraits = u.warlordTraits();
+            lbl_unitWarlordTraits.Text = u.warlordTraits();
             lbl_unitWarlordTraits.Visible = true;
-            //lbl_unitRelics.Text = u.relics();
+            lbl_unitRelics.Text = u.relics();
             lbl_unitRelics.Visible = true;
 
             //unit table 3
@@ -92,6 +101,32 @@ namespace _40kListApp
             lbl_unitXP.Visible = true;
             lbl_unitCP.Text = u.crusadePoints().ToString();
             lbl_unitCP.Visible = true;
+        }
+
+        private void btn_saveArmy_Click(object sender, EventArgs e)
+        {
+            //open save army screen
+            //user selects a file path to save the army too
+            //save the file
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Environment.CurrentDirectory;
+            sfd.RestoreDirectory = true;
+            sfd.FileName = "*.army";
+            sfd.DefaultExt = "army";
+            sfd.Filter = "army files (*.army)|*.army";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                Stream fStream = sfd.OpenFile();
+                StreamWriter sw = new StreamWriter(fStream);
+                fileManager.saveArmy(army_, sw);
+            }
+        }
+
+        private void btn_editUnit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

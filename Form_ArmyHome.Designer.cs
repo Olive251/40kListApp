@@ -43,16 +43,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.num_supplyLimit = new System.Windows.Forms.NumericUpDown();
+            this.num_RP = new System.Windows.Forms.NumericUpDown();
             this.lbl_supplyUsed = new System.Windows.Forms.Label();
-            this.lbl_armySL = new System.Windows.Forms.Label();
-            this.lbl_armyRP = new System.Windows.Forms.Label();
-            this.lbl_armyBattlesWon = new System.Windows.Forms.Label();
+            this.num_winTally = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_armyBattleTally = new System.Windows.Forms.Label();
+            this.num_battleTally = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_unitPR = new System.Windows.Forms.Label();
             this.lbl_unitXP = new System.Windows.Forms.Label();
@@ -74,9 +74,14 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_unitOtherUpgrades = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_editUnit = new System.Windows.Forms.Button();
+            this.btn_saveArmy = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_supplyLimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_RP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_winTally)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_battleTally)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -84,10 +89,12 @@
             // 
             // lb_cards
             // 
+            this.lb_cards.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cards.FormattingEnabled = true;
+            this.lb_cards.ItemHeight = 16;
             this.lb_cards.Location = new System.Drawing.Point(24, 55);
             this.lb_cards.Name = "lb_cards";
-            this.lb_cards.Size = new System.Drawing.Size(394, 680);
+            this.lb_cards.Size = new System.Drawing.Size(394, 548);
             this.lb_cards.TabIndex = 0;
             this.lb_cards.SelectedIndexChanged += new System.EventHandler(this.lb_cards_SelectedIndexChanged_1);
             // 
@@ -116,7 +123,7 @@
             // 
             this.lbl_armyName.AutoSize = true;
             this.lbl_armyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_armyName.Location = new System.Drawing.Point(697, 20);
+            this.lbl_armyName.Location = new System.Drawing.Point(691, 19);
             this.lbl_armyName.Name = "lbl_armyName";
             this.lbl_armyName.Size = new System.Drawing.Size(154, 29);
             this.lbl_armyName.TabIndex = 3;
@@ -126,7 +133,7 @@
             // 
             this.lbl_armyFaction.AutoSize = true;
             this.lbl_armyFaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_armyFaction.Location = new System.Drawing.Point(702, 53);
+            this.lbl_armyFaction.Location = new System.Drawing.Point(693, 53);
             this.lbl_armyFaction.Name = "lbl_armyFaction";
             this.lbl_armyFaction.Size = new System.Drawing.Size(67, 13);
             this.lbl_armyFaction.TabIndex = 4;
@@ -145,7 +152,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(448, 199);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(448, 229);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -247,63 +254,59 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.num_supplyLimit, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.num_RP, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbl_supplyUsed, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_armySL, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_armyRP, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_armyBattlesWon, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.num_winTally, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_armyBattleTally, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.num_battleTally, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(454, 87);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.75904F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.24096F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(662, 70);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
+            // num_supplyLimit
+            // 
+            this.num_supplyLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_supplyLimit.Location = new System.Drawing.Point(399, 30);
+            this.num_supplyLimit.Name = "num_supplyLimit";
+            this.num_supplyLimit.Size = new System.Drawing.Size(120, 26);
+            this.num_supplyLimit.TabIndex = 15;
+            // 
+            // num_RP
+            // 
+            this.num_RP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_RP.Location = new System.Drawing.Point(267, 30);
+            this.num_RP.Name = "num_RP";
+            this.num_RP.Size = new System.Drawing.Size(120, 26);
+            this.num_RP.TabIndex = 14;
+            // 
             // lbl_supplyUsed
             // 
+            this.lbl_supplyUsed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_supplyUsed.AutoSize = true;
-            this.lbl_supplyUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_supplyUsed.Location = new System.Drawing.Point(531, 27);
+            this.lbl_supplyUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_supplyUsed.Location = new System.Drawing.Point(581, 27);
             this.lbl_supplyUsed.Name = "lbl_supplyUsed";
-            this.lbl_supplyUsed.Size = new System.Drawing.Size(24, 17);
+            this.lbl_supplyUsed.Size = new System.Drawing.Size(27, 43);
             this.lbl_supplyUsed.TabIndex = 13;
             this.lbl_supplyUsed.Text = "00";
             // 
-            // lbl_armySL
+            // num_winTally
             // 
-            this.lbl_armySL.AutoSize = true;
-            this.lbl_armySL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_armySL.Location = new System.Drawing.Point(399, 27);
-            this.lbl_armySL.Name = "lbl_armySL";
-            this.lbl_armySL.Size = new System.Drawing.Size(24, 17);
-            this.lbl_armySL.TabIndex = 12;
-            this.lbl_armySL.Text = "00";
-            // 
-            // lbl_armyRP
-            // 
-            this.lbl_armyRP.AutoSize = true;
-            this.lbl_armyRP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_armyRP.Location = new System.Drawing.Point(267, 27);
-            this.lbl_armyRP.Name = "lbl_armyRP";
-            this.lbl_armyRP.Size = new System.Drawing.Size(24, 17);
-            this.lbl_armyRP.TabIndex = 11;
-            this.lbl_armyRP.Text = "00";
-            // 
-            // lbl_armyBattlesWon
-            // 
-            this.lbl_armyBattlesWon.AutoSize = true;
-            this.lbl_armyBattlesWon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_armyBattlesWon.Location = new System.Drawing.Point(135, 27);
-            this.lbl_armyBattlesWon.Name = "lbl_armyBattlesWon";
-            this.lbl_armyBattlesWon.Size = new System.Drawing.Size(24, 17);
-            this.lbl_armyBattlesWon.TabIndex = 10;
-            this.lbl_armyBattlesWon.Text = "00";
+            this.num_winTally.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_winTally.Location = new System.Drawing.Point(135, 30);
+            this.num_winTally.Name = "num_winTally";
+            this.num_winTally.Size = new System.Drawing.Size(120, 26);
+            this.num_winTally.TabIndex = 10;
             // 
             // label10
             // 
@@ -355,15 +358,18 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Battle Tally";
             // 
-            // lbl_armyBattleTally
+            // num_battleTally
             // 
-            this.lbl_armyBattleTally.AutoSize = true;
-            this.lbl_armyBattleTally.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_armyBattleTally.Location = new System.Drawing.Point(3, 27);
-            this.lbl_armyBattleTally.Name = "lbl_armyBattleTally";
-            this.lbl_armyBattleTally.Size = new System.Drawing.Size(24, 17);
-            this.lbl_armyBattleTally.TabIndex = 9;
-            this.lbl_armyBattleTally.Text = "00";
+            this.num_battleTally.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_battleTally.Location = new System.Drawing.Point(3, 30);
+            this.num_battleTally.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.num_battleTally.Name = "num_battleTally";
+            this.num_battleTally.Size = new System.Drawing.Size(120, 26);
+            this.num_battleTally.TabIndex = 9;
             // 
             // tableLayoutPanel3
             // 
@@ -377,41 +383,45 @@
             this.tableLayoutPanel3.Controls.Add(this.label12, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(907, 199);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(907, 229);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.75904F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.24096F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(209, 79);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
             // lbl_unitPR
             // 
+            this.lbl_unitPR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_unitPR.AutoSize = true;
-            this.lbl_unitPR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_unitPR.Location = new System.Drawing.Point(3, 31);
+            this.lbl_unitPR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_unitPR.Location = new System.Drawing.Point(21, 31);
             this.lbl_unitPR.Name = "lbl_unitPR";
-            this.lbl_unitPR.Size = new System.Drawing.Size(24, 17);
+            this.lbl_unitPR.Size = new System.Drawing.Size(27, 48);
             this.lbl_unitPR.TabIndex = 16;
             this.lbl_unitPR.Text = "00";
             // 
             // lbl_unitXP
             // 
+            this.lbl_unitXP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_unitXP.AutoSize = true;
-            this.lbl_unitXP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_unitXP.Location = new System.Drawing.Point(72, 31);
+            this.lbl_unitXP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_unitXP.Location = new System.Drawing.Point(90, 31);
             this.lbl_unitXP.Name = "lbl_unitXP";
-            this.lbl_unitXP.Size = new System.Drawing.Size(24, 17);
+            this.lbl_unitXP.Size = new System.Drawing.Size(27, 48);
             this.lbl_unitXP.TabIndex = 15;
             this.lbl_unitXP.Text = "00";
             // 
             // lbl_unitCP
             // 
+            this.lbl_unitCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_unitCP.AutoSize = true;
-            this.lbl_unitCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_unitCP.Location = new System.Drawing.Point(141, 31);
+            this.lbl_unitCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_unitCP.Location = new System.Drawing.Point(160, 31);
             this.lbl_unitCP.Name = "lbl_unitCP";
-            this.lbl_unitCP.Size = new System.Drawing.Size(24, 17);
+            this.lbl_unitCP.Size = new System.Drawing.Size(27, 48);
             this.lbl_unitCP.TabIndex = 14;
             this.lbl_unitCP.Text = "00";
             // 
@@ -460,7 +470,7 @@
             this.tableLayoutPanel4.Controls.Add(this.label13, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.label14, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.label15, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(448, 358);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(448, 393);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -582,7 +592,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.lbl_unitOtherUpgrades, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(907, 312);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(907, 346);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.92593F));
@@ -611,20 +621,33 @@
             this.label18.TabIndex = 11;
             this.label18.Text = "Other upgrades and selectable abilities:";
             // 
-            // button2
+            // btn_editUnit
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(907, 543);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Edit Unit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_editUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editUnit.Location = new System.Drawing.Point(907, 578);
+            this.btn_editUnit.Name = "btn_editUnit";
+            this.btn_editUnit.Size = new System.Drawing.Size(209, 23);
+            this.btn_editUnit.TabIndex = 11;
+            this.btn_editUnit.Text = "Edit Unit";
+            this.btn_editUnit.UseVisualStyleBackColor = true;
+            this.btn_editUnit.Click += new System.EventHandler(this.btn_editUnit_Click);
+            // 
+            // btn_saveArmy
+            // 
+            this.btn_saveArmy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_saveArmy.Location = new System.Drawing.Point(1001, 19);
+            this.btn_saveArmy.Name = "btn_saveArmy";
+            this.btn_saveArmy.Size = new System.Drawing.Size(115, 23);
+            this.btn_saveArmy.TabIndex = 12;
+            this.btn_saveArmy.Text = "Save Army";
+            this.btn_saveArmy.UseVisualStyleBackColor = true;
+            this.btn_saveArmy.Click += new System.EventHandler(this.btn_saveArmy_Click);
             // 
             // Form_ArmyHome
             // 
-            this.ClientSize = new System.Drawing.Size(1155, 755);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1155, 631);
+            this.Controls.Add(this.btn_saveArmy);
+            this.Controls.Add(this.btn_editUnit);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
@@ -640,6 +663,10 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_supplyLimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_RP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_winTally)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_battleTally)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -681,16 +708,11 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_editUnit;
         private System.Windows.Forms.Label lbl_unitKeywords;
         private System.Windows.Forms.Label lbl_unitFaction;
         private System.Windows.Forms.Label lbl_unitRole;
         private System.Windows.Forms.Label lbl_unitName;
-        private System.Windows.Forms.Label lbl_supplyUsed;
-        private System.Windows.Forms.Label lbl_armySL;
-        private System.Windows.Forms.Label lbl_armyRP;
-        private System.Windows.Forms.Label lbl_armyBattlesWon;
-        private System.Windows.Forms.Label lbl_armyBattleTally;
         private System.Windows.Forms.Label lbl_unitPR;
         private System.Windows.Forms.Label lbl_unitXP;
         private System.Windows.Forms.Label lbl_unitCP;
@@ -700,5 +722,11 @@
         private System.Windows.Forms.Label lbl_unitEquipment;
         private System.Windows.Forms.Label lbl_unitType;
         private System.Windows.Forms.Label lbl_unitOtherUpgrades;
+        private System.Windows.Forms.Button btn_saveArmy;
+        private System.Windows.Forms.NumericUpDown num_supplyLimit;
+        private System.Windows.Forms.NumericUpDown num_RP;
+        private System.Windows.Forms.Label lbl_supplyUsed;
+        private System.Windows.Forms.NumericUpDown num_winTally;
+        private System.Windows.Forms.NumericUpDown num_battleTally;
     }
 }

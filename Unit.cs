@@ -20,7 +20,8 @@ namespace _40kListApp
         List<string> psyPowers_;
         List<string> relics_;
         List<string> warlordTraits_;
-        Helper helper = new Helper();
+        List<string> otherAbilities_;
+        static Helper helper = new Helper();
 
         public Unit()
         {
@@ -59,12 +60,14 @@ namespace _40kListApp
             string dirty_psyPowers = recordTokens[9];
             string dirty_relics = recordTokens[10];
             string dirty_traits = recordTokens[11];
+            string dirty_otherAbilities = recordTokens[12];
 
             List<string> keywords = helper.parseDelimLine(dirty_keywords, ',');
             List<string> equipment = helper.parseDelimLine(dirty_equipment, ',');
             List<string> psyPowers = helper.parseDelimLine(dirty_psyPowers, ',');
             List<string> relics = helper.parseDelimLine(dirty_relics, ',');
             List<string> warlordTraits = helper.parseDelimLine(dirty_traits, ',');
+            List<string> otherAbilities = helper.parseDelimLine(dirty_otherAbilities, ',');
 
             name_ = name;
             type_ = type;
@@ -78,6 +81,7 @@ namespace _40kListApp
             psyPowers_ = psyPowers;
             relics_ = relics;
             warlordTraits_= warlordTraits;
+            otherAbilities_ = otherAbilities;
         }
 
         public string writeUnitLine()
@@ -92,36 +96,56 @@ namespace _40kListApp
             line += powerRating_ + "|";
             line += crusadePoints_ + "|";
 
-            foreach (string keyword in keywords_)
+            if (keywords_ != null)
             {
-                line += keyword + ",";
+                foreach (string keyword in keywords_)
+                {
+                    line += keyword + ",";
+                }
             }
+            
             line += "|";
 
-            foreach (string equipment in equipment_)
+            if (equipment_ != null)
             {
-                line += equipment + ",";
-            }
+                foreach (string equipment in equipment_)
+                {
+                    line += equipment + ",";
+                }
+            }            
             line += "|";
 
-            foreach (string power in psyPowers_)
+            if (psyPowers_ != null)
             {
-                line += power + ",";
-            }
+                foreach (string power in psyPowers_)
+                {
+                    line += power + ",";
+                }
+            }            
             line += "|";
 
-            foreach (string relic in relics_)
+            if (relics_ != null)
             {
-                line += relic + ",";
-            }
+                foreach (string relic in relics_)
+                {
+                    line += relic + ",";
+                }
+            }            
             line += "|";
 
-            foreach (string trait in warlordTraits_)
+            if (warlordTraits_!= null)
             {
-                line += trait + ",";
-            }
+                foreach (string trait in warlordTraits_)
+                {
+                    line += trait + ",";
+                }
+            }            
             line += "|";
 
+            if (otherAbilities_ != null)
+            {
+                foreach (string ability in otherAbilities_) { line += ability + ","; }
+            }
             return line;
         }
 
@@ -132,6 +156,39 @@ namespace _40kListApp
         public int crusadePoints() { return crusadePoints_; }
         public string battleFieldRole() { return battlefieldRole_; }
         public string faction() { return faction_; }
+        public string psyPowers()
+        {
+            string rv = "";
+            if (psyPowers_ != null)
+            {
+                foreach (string power in psyPowers_)
+                {
+                    rv += power + ", ";
+                }
+            }            
+            return rv;
+        }
+        public string warlordTraits()
+        {
+            string rv = "";
+            if (warlordTraits_ != null)
+            {
+                foreach (string trait in warlordTraits_)
+                {
+                    rv += trait + ", ";
+                }
+            }            
+            return rv;
+        }
+        public string relics()
+        {
+            string rv = "";
+            if (relics_ != null)
+            {
+                foreach (string relic in relics_) { rv += relic + ", "; }
+            }            
+            return rv;
+        }
         public List<string> keywords() { return keywords_;}
         public List<string> equipment() { return equipment_; }
     }
