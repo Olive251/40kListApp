@@ -42,10 +42,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tb_powerRating = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_equipment = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_keywords = new System.Windows.Forms.TextBox();
             this.lbl_keywords = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_psyPowers = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 33);
+            this.label2.Location = new System.Drawing.Point(3, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 2;
@@ -83,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 66);
+            this.label3.Location = new System.Drawing.Point(3, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 3;
@@ -93,7 +95,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 99);
+            this.label4.Location = new System.Drawing.Point(3, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 17);
             this.label4.TabIndex = 4;
@@ -101,7 +103,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(35, 305);
+            this.btn_cancel.Location = new System.Drawing.Point(35, 371);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 10;
@@ -111,7 +113,7 @@
             // 
             // btn_addUnit
             // 
-            this.btn_addUnit.Location = new System.Drawing.Point(432, 305);
+            this.btn_addUnit.Location = new System.Drawing.Point(432, 371);
             this.btn_addUnit.Name = "btn_addUnit";
             this.btn_addUnit.Size = new System.Drawing.Size(104, 23);
             this.btn_addUnit.TabIndex = 11;
@@ -128,14 +130,14 @@
             // 
             // tb_faction
             // 
-            this.tb_faction.Location = new System.Drawing.Point(174, 102);
+            this.tb_faction.Location = new System.Drawing.Point(174, 111);
             this.tb_faction.Name = "tb_faction";
             this.tb_faction.Size = new System.Drawing.Size(308, 20);
             this.tb_faction.TabIndex = 4;
             // 
             // tb_unitType
             // 
-            this.tb_unitType.Location = new System.Drawing.Point(174, 36);
+            this.tb_unitType.Location = new System.Drawing.Point(174, 39);
             this.tb_unitType.Name = "tb_unitType";
             this.tb_unitType.Size = new System.Drawing.Size(308, 20);
             this.tb_unitType.TabIndex = 2;
@@ -152,7 +154,7 @@
             "Heavy Support",
             "Dedicated Transport",
             "Lord of War"});
-            this.cb_battlefieldRole.Location = new System.Drawing.Point(174, 69);
+            this.cb_battlefieldRole.Location = new System.Drawing.Point(174, 75);
             this.cb_battlefieldRole.Name = "cb_battlefieldRole";
             this.cb_battlefieldRole.Size = new System.Drawing.Size(308, 21);
             this.cb_battlefieldRole.TabIndex = 3;
@@ -161,7 +163,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 198);
+            this.label5.Location = new System.Drawing.Point(3, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 17);
             this.label5.TabIndex = 7;
@@ -169,17 +171,19 @@
             // 
             // tb_powerRating
             // 
-            this.tb_powerRating.Location = new System.Drawing.Point(174, 201);
+            this.tb_powerRating.Location = new System.Drawing.Point(174, 255);
             this.tb_powerRating.Name = "tb_powerRating";
             this.tb_powerRating.Size = new System.Drawing.Size(74, 20);
-            this.tb_powerRating.TabIndex = 7;
+            this.tb_powerRating.TabIndex = 8;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.13174F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.86826F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tb_psyPowers, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tb_equipment, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.tb_keywords, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lbl_keywords, 0, 4);
@@ -191,34 +195,34 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.tb_powerRating, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.tb_powerRating, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 59);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(501, 221);
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(501, 288);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
-            // textBox2
+            // tb_equipment
             // 
-            this.textBox2.Location = new System.Drawing.Point(174, 168);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(308, 20);
-            this.textBox2.TabIndex = 6;
+            this.tb_equipment.Location = new System.Drawing.Point(174, 183);
+            this.tb_equipment.Name = "tb_equipment";
+            this.tb_equipment.Size = new System.Drawing.Size(308, 20);
+            this.tb_equipment.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 165);
+            this.label6.Location = new System.Drawing.Point(3, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 17);
             this.label6.TabIndex = 12;
@@ -226,7 +230,7 @@
             // 
             // tb_keywords
             // 
-            this.tb_keywords.Location = new System.Drawing.Point(174, 135);
+            this.tb_keywords.Location = new System.Drawing.Point(174, 147);
             this.tb_keywords.Name = "tb_keywords";
             this.tb_keywords.Size = new System.Drawing.Size(308, 20);
             this.tb_keywords.TabIndex = 5;
@@ -235,17 +239,34 @@
             // 
             this.lbl_keywords.AutoSize = true;
             this.lbl_keywords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_keywords.Location = new System.Drawing.Point(3, 132);
+            this.lbl_keywords.Location = new System.Drawing.Point(3, 144);
             this.lbl_keywords.Name = "lbl_keywords";
             this.lbl_keywords.Size = new System.Drawing.Size(163, 17);
             this.lbl_keywords.TabIndex = 8;
             this.lbl_keywords.Text = "Selectable Keywords:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 216);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Psychic Powers:";
+            // 
+            // tb_psyPowers
+            // 
+            this.tb_psyPowers.Location = new System.Drawing.Point(174, 219);
+            this.tb_psyPowers.Name = "tb_psyPowers";
+            this.tb_psyPowers.Size = new System.Drawing.Size(308, 20);
+            this.tb_psyPowers.TabIndex = 7;
+            // 
             // Form_NewUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 349);
+            this.ClientSize = new System.Drawing.Size(553, 417);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btn_addUnit);
             this.Controls.Add(this.btn_cancel);
@@ -275,9 +296,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_powerRating;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_equipment;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_keywords;
         private System.Windows.Forms.Label lbl_keywords;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tb_psyPowers;
     }
 }

@@ -12,12 +12,14 @@ namespace _40kListApp
         string faction_;
         List<Unit> units_;
 
-        public Army(string name_, string faction_)
+        public Army(string name, string faction)
         {
-            this.name_ = name_;
-            this.faction_ = faction_;
+            this.name_ = name;
+            this.faction_ = faction;
             units_ = new List<Unit>();
         }
+
+
         public Army() { units_ = new List<Unit>(); }
 
        public string name()
@@ -38,6 +40,21 @@ namespace _40kListApp
         public List<Unit> units() { return units_; }
 
         public Unit unit(int index) { return units_[index]; }
+
+        public List<string> writeArmyRecord()
+        {
+            List<string> record = new List<string>();
+
+            string armyLine = name_ + "|" + faction_;
+            record.Add(armyLine);
+
+            foreach (Unit u in units_)
+            {
+                record.Add(u.writeUnitLine());
+            }
+
+            return record;
+        }
        
     }
 }

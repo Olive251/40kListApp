@@ -24,9 +24,11 @@ namespace _40kListApp
         private void btn_addUnit_Click(object sender, EventArgs e)
         {
             List<string> keywords = helper.parseDelimLine(tb_keywords.Text, ',');
+            List<string> equipment = helper.parseDelimLine(tb_equipment.Text, ',');
+            List<string> psyPowers = helper.parseDelimLine(tb_psyPowers.Text, ',');
 
             Unit newUnit = 
-                new Unit(tb_unitName.Text, tb_unitType.Text, cb_battlefieldRole.Text, tb_faction.Text, Int32.Parse(tb_powerRating.Text), keywords);
+                new Unit(tb_unitName.Text, tb_unitType.Text, cb_battlefieldRole.Text, tb_faction.Text, Int32.Parse(tb_powerRating.Text), keywords, equipment, psyPowers);
 
             armyHome_.army_.addUnit(newUnit);
             armyHome_.loadScreen();

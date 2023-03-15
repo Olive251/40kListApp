@@ -70,8 +70,14 @@ namespace _40kListApp
             //unit table 2
             lbl_unitType.Text = u.unitType();
             lbl_unitType.Visible = true;
-            lbl_unitEquipment.Text = " ";
+            //equipment
+            lbl_unitEquipment.Text = "";
+            foreach (string equipment in u.equipment())
+            {
+                lbl_unitEquipment.Text += equipment + ", ";
+            }
             lbl_unitEquipment.Visible = true;
+
             //lbl_unitPsyPowers = u.psyPowers();
             lbl_unitPsyPowers.Visible = true;
             //lbl_unitWarlordTraits = u.warlordTraits();
